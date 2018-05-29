@@ -1,0 +1,19 @@
+.topnav{
+	display: block;
+    margin: 0;
+    padding: 15px;
+    background-color: #dddddd;
+}
+
+.topnav a{
+	font-family: sans-serif;
+	padding: 15px;
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+
+h1{
+	font-family: Helvetica;
+	padding: 5px;
+}
