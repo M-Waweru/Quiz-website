@@ -1,17 +1,39 @@
-.topnav{
-	display: block;
-    margin: 0;
-    padding: 15px;
-    background-color: #dddddd;
+#site-header{
+	background: orange linear-gradient(orange,#ff8c00);
+	padding: 5px;
 }
 
-.topnav a{
-	font-family: sans-serif;
-	padding: 15px;
-	text-decoration: none;
-	text-align: center;
-	color: black;
+.topnav{
+    margin: 0;
+    padding: 0px;
+    background-color: #dddddd;
+    overflow: hidden;
 }
+	.topnav a{
+		float: left;
+		font-family: sans-serif;
+		padding: 14px 20px;
+		text-decoration: none;
+		text-align: center;
+		color: black;
+	}
+	.topnav a:hover{
+		color: white;
+		background-color: black;
+	}
+	.topnav a:active{
+		background-color: black;
+		color: orange;
+	}
+
+.content-container{
+	padding: 100px;
+}
+	.content-container p{
+		font-family: "Helvetica Neue", Helvetica, sans-serif;
+		font-size: 20px;
+	}
+
 
 h1{
 	font-family: Helvetica;
