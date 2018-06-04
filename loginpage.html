@@ -2,88 +2,45 @@
 <html>
 <head>
 	<title>Login</title>
-	<style type="text/css">
-	html, body {   
-		width: 100%;   
-		height: 100%;   
-		font-family: "Helvetica Neue", Helvetica, sans-serif;   
-		color: #444;   
-	}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="login-styles.css">
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		function validatelogin(){
+			var user = document.loginform.username.value;
+			var pwd = document.loginform.password.value;
 
-	#logincontainer {
-		position: fixed;
-		width: 340px;
-		height: 280px;
-		top: 50%;
-		left: 50%;
-		margin-top: -150px;
-		margin-left: -170px;
-	}
-
-	form {
-		margin: 0 auto;
-		margin-top: 20px;
-	}
-
-	label {
-		color: #555;
-		display: inline-block;
-		/*margin-left: 18px;*/
-		padding-top: 10px;
-		font-size: 16px;
-	}
-
-	input {
-		font-family: "Helvetica Neue", Helvetica, sans-serif;
-		font-size: 15px;
-		outline: none;
-	}
-	input[type=text],
-	input[type=password] {
-		color: #777;
-		padding-left: 10px;
-		margin: 10px;
-		margin-top: 12px;
-		margin-left: 18px;
-		width: 290px;
-		height: 30px;
-	}
-	/*#lower {
-		background: #ecf2f5;
-		width: 100%;
-		height: 69px;
-		margin-top: 20px;
-	}*/
-
-	input[type=checkbox] {
-		margin-left: 20px;
-		margin-top: 30px;
-	}
-
-	/*.check {
-		margin-left: 3px;
-	}*/
-
-	input[type=submit] {
-		float: right;
-		margin-right: 20px;
-		margin-top: 20px;
-		width: 80px;
-		height: 30px;
-	}
-</style>
+			if (user==null || user==""){
+				alert("Username cannot be blank");
+				return false;
+			}
+			else if (pwd==null || pwd==""){
+				alert("Password cannot be blank");
+				return false;
+			}
+		}
+	</script>
 </head>
 <body>
+	<div id="site-login-header">
+	</div>
 	<div id="logincontainer">
-		<form>
-			<label for="username">Username:</label><br>
-			<input type="text" id="username" name="username"><br>
-			<label for="password">Password:</label><br>
-			<input type="password" id="password" name="password">
-			<div id="lower">
-				<input type="checkbox"><label for="checkbox">Keep me logged in</label>
-				<input type="submit" value="Login">
-			</div>
+		<form name="loginform" method="post" onsubmit="return validatelogin()" action="/action_page.php">
+			<fieldset>
+				<div id="title">
+					<h2>Log In</h2>
+				</div>
+				<label for="username">Username:</label><br>
+				<input type="text" id="username" name="username"><br>
+				<label for="password">Password:</label><br>
+				<input type="password" id="password" name="password">
+				<div id="lower">
+					<input type="checkbox"><label for="checkbox">Keep me logged in</label>
+					<input type="submit" value="Login">
+				</div>
+			</fieldset>
 		</form>
 	</div>
 </body>
