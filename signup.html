@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/form-styles.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Sign Up</title>
+</head>
+<body>
+	<div>
+		<h1>Quiz Site</h1>
+	</div>
+	<form name="signup-form" action="action_page.php">
+		<div class="container">
+			<div class="title">
+				<h1>Sign Up</h1>
+				<p>Please fill in this form to create an account.</p>
+				<hr>
+			</div><br>
+
+			<label for="email"><b>Email:</b></label><br>
+			<input type="text" name="email" placeholder="Enter email address" required>
+			<br>
+
+			<label for="pwd"><b>Password:</b></label><br>
+			<input type="password" name="pwd" placeholder="Enter Password" required>
+			<br>
+
+			<label for="pwd-again"><b>Repeat Password:</b></label><br>
+			<input type="password" name="pwd-again" placeholder="Enter Password again" required>
+			<br>
+
+			<label>
+				<input type="checkbox" name="remember">Remember me
+			</label>
+
+			<p>By creating an account, you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+			<div class="buttons-class">
+				<button type="button" class="btncancel">Cancel</button>
+				<button type="submit" class="btnsignup">Sign Up</button>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
