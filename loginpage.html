@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/login-styles.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		function validatelogin(){
+			var user = document.loginform.username.value;
+			var pwd = document.loginform.password.value;
+
+			if (user==null || user==""){
+				alert("Username cannot be blank");
+				return false;
+			}
+			else if (pwd==null || pwd==""){
+				alert("Password cannot be blank");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="logincontainer">
+		<form name="loginform" method="post" onsubmit="return validatelogin()" action="php/loginauthenticate.php">
+			<fieldset>
+				<div id="title">
+					<h2>Log In</h2>
+				</div>
+				<label for="username">Username:</label><br>
+				<input type="text" id="username" name="username"><br>
+				<label for="password">Password:</label><br>
+				<input type="password" id="password" name="password">
+				<div id="lower">
+					<input type="checkbox"><label for="checkbox">Keep me logged in</label>
+					<input type="submit" value="Login"><br>
+					<a href="signup.html" id="signup-link">Create an account</a>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
