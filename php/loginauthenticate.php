@@ -2,7 +2,7 @@
 $mysqli = new mysqli("localhost", "root", "", "quiz-website");
 
 if($mysqli === false){
-	die("WARNING!!!! Could not connect. " . $mysqli->connect_error);
+    die("WARNING!!!! Could not connect. " . $mysqli->connect_error);
 }
 
 $username = $mysqli->real_escape_string($_REQUEST['username']);
@@ -13,10 +13,17 @@ $qry="SELECT * FROM `Users` WHERE username= '".$username."' and password='".$pwd
 $result = $mysqli->query($qry);
 
 if ($result===false || mysqli_num_rows($result) <= 0){
-	echo "ERROR: Could not execute $qry. " . $mysqli->error;
+    echo "Your username does not exist. Sign Up for an account";
     return false;
 }
-return true;
 
+public function getUsername()
+{
+    $row = $result->fetch_assoc();
+    return $row["Username"];
+}
+
+echo "You are logged in";
+header('Location: ../index.html');
 $mysqli->close();
 ?>
