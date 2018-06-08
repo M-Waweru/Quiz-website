@@ -13,10 +13,11 @@ $qry="SELECT * FROM `Users` WHERE username= '".$username."' and password='".$pwd
 $result = $mysqli->query($qry);
 
 if ($result===false || mysqli_num_rows($result) <= 0){
-	echo "ERROR: Could not execute $qry. " . $mysqli->error;
+	echo "Your username does not exist. Sign Up for an account";
     return false;
 }
-return true;
 
+echo "You are logged in";
+header('Location: ../index.html');
 $mysqli->close();
 ?>
