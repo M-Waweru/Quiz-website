@@ -5,32 +5,27 @@ $(document).ready(function() {
         const resultsContainer = $('#results');
         const submitButton = $('#submitBtn');
 
-        const myQuestions = [{
-            question: "Who is the strongest?",
-            answers: {
-                a: "Superman",
-                b: "The Terminator",
-                c: "Waluigi, obviously"
-            },
-            correctAnswer: "c"
-        }, {
-            question: "What is the best site ever created?",
-            answers: {
-                a: "SitePoint",
-                b: "Simple Steps Code",
-                c: "Trick question; they're both the best"
-            },
-            correctAnswer: "c"
-        }, {
-            question: "Where is Waldo really?",
-            answers: {
-                a: "Antarctica",
-                b: "Exploring the Pacific Ocean",
-                c: "Sitting in a tree",
-                d: "Minding his own business, so stop asking"
-            },
-            correctAnswer: "d"
-        }];
+        let myQuestions = getQuestions()[0];
+
+        function getQuestions() {
+            let myQuestions = [];
+
+            $.ajax({
+                url: "http://localhost/Quiz-website/php/testQuestions.php",
+                type: 'GET',
+                dataType: "json",
+                async: false, // todo find way to do the request asynchronously
+                success: function(result) {
+                    let serverResponse = JSON.stringify(result);
+                    myQuestions.push(JSON.parse(serverResponse));
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR.status);
+                    console.log(errorThrown);
+                }
+            });
+            return myQuestions;
+        }
 
         function buildQuiz() {
             // we'll need a place to store the HTML output
@@ -45,7 +40,6 @@ $(document).ready(function() {
 
                     // and for each available answer...
                     for (letter in currentQuestion.answers) {
-
                         // ...add an HTML radio button
                         answers.push(
                             `<label>
