@@ -1,9 +1,5 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "", "quiz-website");
-
-if($mysqli === false){
-	die("WARNING!!!! Could not connect. " . $mysqli->connect_error);
-}
+require 'connection.php';
 
 $username = $mysqli->real_escape_string($_REQUEST['username']);
 $pwd = $mysqli->real_escape_string($_REQUEST['password']);
