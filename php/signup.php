@@ -1,10 +1,6 @@
 <?php
+require 'connection.php';
 
-$mysqli = new mysqli("localhost", "root", "", "quiz-website");
-
-if($mysqli === false){
-    die("WARNING!!!! Could not connect. " . $mysqli->connect_error);
-}
 $username = $mysqli->real_escape_string($_REQUEST['username']);
 $email = $mysqli->real_escape_string($_REQUEST['email']);
 $pwd = $mysqli->real_escape_string($_REQUEST['pwd']);
@@ -29,10 +25,11 @@ if ($result==true){
 $signupsql = "INSERT INTO `Users`(`Username`, `Email address`, `Password`) VALUES ('$username','$email','$pwd');"; 
 
 if ($mysqli->query($signupsql)===true){
-    echo "Your account has been registered";
+	echo "Your account has been registered";
+	header("../index.html");
 } else {
     echo "ERROR: Your account COULDN'T be registered" . $mysqli->error;
 }
-header('Location: ../index.html');
+
 $mysqli->close();
 ?>
