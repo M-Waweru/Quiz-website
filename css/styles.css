@@ -24,6 +24,11 @@
 body {
     font-size: 1.2em;
 }
+/*[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:after {
+  background-color: #2196F3;
+}
+*/
 
 /*
   ============================================
