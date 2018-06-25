@@ -10,8 +10,11 @@ $result = $mysqli->query($qry);
 
 if ($result===false || mysqli_num_rows($result) <= 0){
 	echo "Your username does not exist. Sign Up for an account";
-    return false;
+	return false;
 }
+
+session_start();
+$_SESSION["username"]=$username;
 
 echo "You are logged in";
 header('Location: ../index.html');
