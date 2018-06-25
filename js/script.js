@@ -78,7 +78,7 @@ $(document).ready(function() {
                     }
 
                     let container = `<div class="row">
-                                        <div class="col s12 m8 card-panel hoverable">
+                                        <div class="col s12 m8 l8 card-panel hoverable">
                                             <div class="section">
                                                 <div class="container">
                                                     Question ${questionNumber+1} <br><br>
