@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     (function() {
-        const quizContainer = $('#quiz');
+        const quizContainer = $('#quizSection');
         const resultsContainer = $('#results');
         const submitButton = $('#submitBtn');
 
@@ -28,37 +28,75 @@ $(document).ready(function() {
         }
 
         function buildQuiz() {
-            // we'll need a place to store the HTML output
+
+            // <div class="row">
+            //         <div class="col s12 m8 card-panel">
+            //             <div class="section">
+            //                 <div class="container">
+            //                     Question 1 <br><br>
+            //                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laborum inventore itaque, tempore saepe, in delectus incidunt natus officia eaque perferendis? Voluptatum assumenda, ad incidunt nam, optio sed nemo a.
+            //                     <form action="#">
+            //                         <p>
+            //                             <input id="first" name="group1" type="radio" value="first" checked />
+            //                             <label for="first">Red</label>
+            //                         </p>
+            //                         <p>
+            //                             <input id="second" name="group1" type="radio" value="second" />
+            //                             <label for="second">Yellow</label>
+            //                         </p>
+            //                         <p>
+            //                             <input id="third" class="with-gap" name="group1" type="radio" value="third" />
+            //                             <label for="third">Green</label>
+            //                         </p>
+            //                     </form>
+            //                 </div>
+            //             </div>
+
+            //         </div>
+            //     </div>
+
+            // a place to store the HTML output
             const output = [];
 
-            // for each question...
+            // for each question
             myQuestions.forEach(
                 (currentQuestion, questionNumber) => {
 
-                    // we'll want to store the list of answer choices
+                    // store containing list of answer choices
                     const answers = [];
 
-                    // and for each available answer...
+                    // for each available answer
                     for (letter in currentQuestion.answers) {
-                        // ...add an HTML radio button
+
+                        // push radio buttons and labels to array
                         answers.push(
-                            `<label>
-                            <input type="radio" name="question${questionNumber}" value="${letter}">
-                                ${letter} : ${currentQuestion.answers[letter]}
-                        </label>`
+                            `<p>
+                                <input id="question${currentQuestion.answers[letter]}" class="with-gap" name="question${questionNumber}" type="radio" value="${letter}" />
+                                <label for="question${currentQuestion.answers[letter]}">${currentQuestion.answers[letter]}</label>
+                            </p>`
                         );
                     }
 
-                    // add this question and its answers to the output
-                    output.push(
-                        `<div class="question"> ${currentQuestion.question} </div>
-                    <div class="answers"> ${answers.join('')} </div>`
-                    );
+                    let container = `<div class="row">
+                                        <div class="col s12 m8 card-panel">
+                                            <div class="section">
+                                                <div class="container">
+                                                    Question ${questionNumber+1} <br><br>
+                                                    ${currentQuestion.question}
+                                                    <form action="#">
+                                                        ${answers.join('')}
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`;
+
+                    output.push(container);
                 }
             );
 
-            // finally combine our output list into one string of HTML and put it on the page
-            quizContainer.html(output.join(''));
+            // combine output list into one string of HTML and put it on the page
+            quizContainer.prepend(output.join(''));
         }
 
         function showResults() {
@@ -99,7 +137,7 @@ $(document).ready(function() {
         buildQuiz();
 
         // on submit, show result
-        submitButton.click(showResults);
+        // submitButton.click(showResults);
     })();
 
 });
