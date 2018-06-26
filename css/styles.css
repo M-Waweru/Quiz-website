@@ -21,9 +21,19 @@
 .header {
     text-align: center;
 }
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url("../fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+}
 body {
     font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
 }
+/*[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:after {
+  background-color: #2196F3;
+}
+*/
 
 /*
   ============================================
