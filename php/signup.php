@@ -9,7 +9,7 @@ $qry="SELECT * FROM `Users` WHERE username= '".$username."';";
 
 $result = $mysqli->query($qry);
 if ($result===true || mysqli_num_rows($result)>0){
-	echo "That username is taken";
+    echo "That username is taken";
     return false;
 }
 
@@ -18,7 +18,7 @@ $qry="SELECT * FROM `Users` WHERE Email Address = '".$email."';";
 $result = $mysqli->query($qry);
 
 if ($result==true){
-	echo "That email is in use";
+    echo "That email is in use";
     return false;
 }
 
@@ -28,7 +28,8 @@ if ($mysqli->query($signupsql)===true){
 	echo "Your account has been registered";
 	header("../index.html");
 } else {
-	echo "ERROR: Your account COULDN'T be registered" . $mysqli->error;
+    echo "ERROR: Your account COULDN'T be registered" . $mysqli->error;
 }
+
 $mysqli->close();
 ?>
