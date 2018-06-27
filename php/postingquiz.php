@@ -6,7 +6,7 @@
 	$quizname = $mysqli->real_escape_string($_REQUEST['quizname']);
 	$quizdescription = $mysqli->real_escape_string($_REQUEST['quizdesc']);
 	$quizcategory = $mysqli->real_escape_string($_REQUEST['quizcategory']);
-	$username = "Waweru";
+	$username = $_SESSION["username"];
 
 	//Getting the Category Number
 	$categoryqry = "Select * from `category` where `Category Name` = '$quizcategory';";
@@ -28,7 +28,8 @@
 		$result = $mysqli->query($quiznoqry);
 	}
 	while ($result==false);
-
+	//Saving quiz number to session
+	$_SESSION["quizno"]=$quizno;
 	//Inserting the question and its details to the database
 	$insertsql = "INSERT INTO `quiz`(`Quiz No`, `Quiz Name`, `Quiz Description`, `Category No`, `Publisher`) VALUES ('$quizno','$quizname','$quizdescription','$categoryno','$username')";
 
@@ -38,5 +39,5 @@
 	else {
 		echo "Error".$mysqli->error;
 	}
-	
+	header('Location: ../createquiz.html');
 ?>

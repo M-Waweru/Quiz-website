@@ -5,16 +5,25 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<script type="text/javascript">
+		function finishQuiz(){
+			if (confirm("Are you sure that want to finish")){
+				location.assign('index.html');
+			} else {
+				
+			}
+		}
+	</script>
 </head>
 <body>
 	<div class="container">
 		<h1>Create a quiz</h1>
 	</div>
 	<div class="container">
-		<form>
+		<form action="" method="post" action="php/postingquestions.php">  
 			<div class="form-group">
 				<label for="questiondata">Enter a question below</label>
-				<input type="textarea" class="form-control" name="questiondata">
+				<textarea name="questiondata" class="form-control"></textarea>
 			</div>
 			<label>Enter choices below</label>
 			<div class="form-group">
@@ -30,12 +39,15 @@
 				<input type="text" class="form-control" name="choice3">
 			</div>		
 			<div>
-				<select name="answer" class="form-control">
-					<option>First choice</option>
-					<option>Second choice</option>
-					<option>Third choice</option>
+				<label for="answer">Which choice is the answer</label>
+				<select name="answer" class="form-control" required>
+					<option value="first">First choice</option>
+					<option value="second">Second choice</option>
+					<option value="third">Third choice</option>
 				</select>
-			</div>	
+			</div><br>
+			<button type="submit" class="btn btn-primary">Save the question and continue</button>
+			<button class="btn btn-primary" onclick="finishQuiz()">Finish</button>
 		</form>
 	</div>
 </body>
