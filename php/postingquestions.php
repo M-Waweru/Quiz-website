@@ -1,13 +1,14 @@
 <?php
-	session_start();
-	require 'connection.php'
+	//session_start();
+	require 'connection.php';
 
-	$questioncontent = $mysqli->real_escape_string($_REQUEST['questiondata']);
+	$questiondata = $mysqli->real_escape_string($_REQUEST['questiondata']);
 	$choice1 = $mysqli->real_escape_string($_REQUEST['choice1']);
-	$choice2 = $mysqli->real_escape_string($_REQUEST['quizname']);
+	$choice2 = $mysqli->real_escape_string($_REQUEST['choice2']);
 	$choice3 = $mysqli->real_escape_string($_REQUEST['choice3']);
 	$answer = $mysqli->real_escape_string($_REQUEST['answer']);
-	$quizno = $_SESSION["quizno"];
+	//$quizno = $_SESSION["quizno"];
+	$quizno="1";
 
 	do {
 		//Random generation of the quiz number
@@ -33,5 +34,5 @@
 	} else {
 		echo "Error".$mysqli->error;
 	}
-	header('Location: ../createquiz.html');
+	//header('Location: ../createquiz.html');
 ?>

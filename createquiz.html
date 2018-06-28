@@ -8,9 +8,9 @@
 	<script type="text/javascript">
 		function finishQuiz(){
 			if (confirm("Are you sure that want to finish")){
-				location.assign('index.html');
+				location.replace('index.html');
 			} else {
-				
+
 			}
 		}
 	</script>
@@ -20,23 +20,23 @@
 		<h1>Create a quiz</h1>
 	</div>
 	<div class="container">
-		<form action="" method="post" action="php/postingquestions.php">  
+		<form method="post" action="php/postingquestions.php">  
 			<div class="form-group">
 				<label for="questiondata">Enter a question below</label>
-				<textarea name="questiondata" class="form-control"></textarea>
+				<textarea name="questiondata" class="form-control" required></textarea>
 			</div>
 			<label>Enter choices below</label>
 			<div class="form-group">
 				<label for="choice1">First Choice:</label>
-				<input type="text" class="form-control" name="choice1">
+				<input type="text" class="form-control" name="choice1" required>
 			</div>
 			<div class="form-group">
 				<label for="choice2">Second Choice: </label> 
-				<input type="text" class="form-control" name="choice2">
+				<input type="text" class="form-control" name="choice2" required>
 			</div>
 			<div class="form-group">
 				<label for="choice3">Third Choice</label>
-				<input type="text" class="form-control" name="choice3">
+				<input type="text" class="form-control" name="choice3" required>
 			</div>		
 			<div>
 				<label for="answer">Which choice is the answer</label>
