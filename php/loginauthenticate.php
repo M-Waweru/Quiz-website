@@ -1,23 +1,30 @@
-
 <?php
 require 'connection.php';
+session_start();
 
 $username = $mysqli->real_escape_string($_REQUEST['username']);
 $pwd = $mysqli->real_escape_string($_REQUEST['password']);
 
-$qry="SELECT * FROM `Users` WHERE username= '".$username."' and password='".$pwd."';";
+$qry="SELECT * FROM `Users` WHERE username= '$username'";
 
 $result = $mysqli->query($qry);
 
-if ($result===false || mysqli_num_rows($result) <= 0){
-	echo "Your username does not exist. Sign Up for an account";
+if ($result===true || mysqli_num_rows($result) > 0){
+	while ($row=$result->fetch_assoc()){
+		$hash=password_verify($pwd, $row["Password"]);
+		if ($hash==false){
+			echo "Wrong password";
+			header('Location: loginpage.html');
+		}
+	}
+} else {
+	echo "Account doesn't exist";
 	return false;
 }
 
-session_start();
 $_SESSION["username"]=$username;
 
 echo "You are logged in";
-header('Location: ../index.html');
+header('Location: ../index.php');
 $mysqli->close();
 ?>

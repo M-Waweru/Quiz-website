@@ -4,42 +4,78 @@
 	<title>Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="css/login-styles.css">
-	<script src="js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/form-styles.css">
+	<script src="js/jquery.js"></script>
 	<script type="text/javascript">
 		function validatelogin(){
 			var user = document.loginform.username.value;
-			var pwd = document.loginform.password.value;
+			var pwd = document.loginform.pwd.value;
 			if (user==null || user==""){
-				alert("Username cannot be blank");
+				$(document).ready(function(){
+					$("#useralert").show();
+				});
 				return false;
+			} else {
+				$(document).ready(function(){
+					$("#useralert").hide();
+				});
 			}
-			else if (pwd==null || pwd==""){
-				alert("Password cannot be blank");
+			
+			if (pwd==null || pwd==""){
+				$(document).ready(function(){
+					$("#pwdalert").show();
+				});
 				return false;
+			} else {
+				$(document).ready(function(){
+					$("#pwdalert").hide();
+				});
 			}
 		}
 	</script>
 </head>
 <body>
-	<div id="logincontainer">
-		<form name="loginform" method="post" onsubmit="return validatelogin()" action="php/loginauthenticate.php">
-			<fieldset>
-				<div id="title">
-					<h2>Log In</h2>
-				</div>
-				<label for="username">Username:</label><br>
-				<input type="text" id="username" name="username"><br>
-				<label for="password">Password:</label><br>
-				<input type="password" id="password" name="password">
-				<div id="lower">
-					<input type="checkbox"><label for="checkbox">Keep me logged in</label>
-					<input type="submit" value="Login"><br>
-					<a href="signup.html" id="signup-link">Create an account</a>
-				</div>
-			</fieldset>
-		</form>
+	<div>
+		<h1>Quiz Up</h1>
 	</div>
+	<form name="loginform" method="post" onsubmit="return validatelogin()" action="php/loginauthenticate.php">
+		<div class="container">
+			<div class="title">
+				<h1>Log In</h1>
+				<p>Please fill in this form to log in to your account.</p>
+			</div><br>
+			<div>
+				<label for="username"><b>Username:</b></label><br>
+				<input type="text" name="username" placeholder="Enter your username here">
+				<br>
+				<div class="alert" id="useralert">
+					<p>Username cannot be blank</p>
+				</div>
+
+				<label for="password"><b>Password:</b></label><br>
+				<input type="password" name="pwd" placeholder="Enter Password">
+				<br>
+				<div class="alert" id=pwdalert>
+					<p>Password cannot be blank</p>
+				</div>
+
+				<label>
+					<input type="checkbox" name="remember">Remember me
+				</label>
+			</div><br>
+			<div class="alert" id="usernamecheck">
+				<p>Username does not exist or is wrong</p>
+			</div>
+
+			<p>Don't have an accounnt? <a href="signup.php">Sign Up</a></p>
+
+			<div class="buttons-class">
+				<button type="submit" class="btnsignup">Log In</button>
+			</div>
+		</div>
+	</form>
+	<footer>
+		<p>Quiz site @2018</p>
+	</footer>
 </body>
 </html>
