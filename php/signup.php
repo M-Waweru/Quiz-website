@@ -8,7 +8,7 @@ $pwd = $mysqli->real_escape_string($_REQUEST['pwd']);
 //Hashing password
 $hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-$qry="SELECT * FROM `Users` WHERE username= '".$username."';";
+$qry="SELECT * FROM `Users` WHERE username= '$username';";
 
 $result = $mysqli->query($qry);
 if ($result===true || mysqli_num_rows($result)>0){
@@ -16,7 +16,7 @@ if ($result===true || mysqli_num_rows($result)>0){
     return false;
 }
 
-$qry="SELECT * FROM `Users` WHERE Email Address = '".$email."';";
+$qry="SELECT * FROM `Users` WHERE Email Address = '$email';";
 
 $result = $mysqli->query($qry);
 
@@ -29,10 +29,10 @@ $signupsql = "INSERT INTO `Users`(`Username`, `Email address`, `Password`) VALUE
 
 if ($mysqli->query($signupsql)===true){
 	echo "Your account has been registered";
-	header("../index.html");
+	header("../index.php");
 } else {
     echo "ERROR: Your account COULDN'T be registered" . $mysqli->error;
+    header("../signup.html");
 }
-header('Location: ../index.html');
 $mysqli->close();
 ?>

@@ -14,17 +14,16 @@ if ($result===true || mysqli_num_rows($result) > 0){
 		$hash=password_verify($pwd, $row["Password"]);
 		if ($hash==false){
 			echo "Wrong password";
-			header('Location: loginpage.html');
+			header('Location: ../loginpage.html');
 		}
 	}
+	$_SESSION["username"]=$username;
+
+	echo "You are logged in";
+	header('Location: ../index.php');
 } else {
 	echo "Account doesn't exist";
 	return false;
 }
-
-$_SESSION["username"]=$username;
-
-echo "You are logged in";
-header('Location: ../index.php');
 $mysqli->close();
 ?>

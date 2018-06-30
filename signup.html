@@ -72,7 +72,8 @@
 			if (pwd==null || pwd==""){
 				$(document).ready(function(){
 					$("#pwdnullalert").show();
-				});			
+				});	
+				return false;		
 			} else {
 				$(document).ready(function(){
 					$("#pwdnullalert").hide();
@@ -83,11 +84,11 @@
 				$(document).ready(function(){
 					$("#pwdlengthalert").hide();
 				});					
-				return false;
 			} else {
 				$(document).ready(function(){
 					$("#pwdlengthalert").show();
-				});				
+				});	
+				return false;			
 			}
 			//Checking if the re-entering of password is valid
 			if (pwdagain==null || pwdagain==""){
@@ -156,7 +157,7 @@
 				<p>Password cannot be blank</p>
 			</div>
 			<div class="alert" id="pwdlengthalert">
-				<p>Password must be at least 8 characters long and must contain numbers and symbols</p>
+				<p>Password must be at least 8 characters long<br>and must contain numbers and symbols</p>
 			</div>
 
 			<label for="pwdagain"><b>Repeat Password:</b></label><br>
