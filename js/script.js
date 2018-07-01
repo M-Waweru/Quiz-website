@@ -100,8 +100,7 @@ $(document).ready(function() {
         }
 
         function showResults() {
-            // gather answer containers from our quiz
-            const answerContainers = quizContainer.find('.answers');
+            const answerContainers = quizContainer.find('.row');
 
             // keep track of user's answers
             let numCorrect = 0;
@@ -112,7 +111,8 @@ $(document).ready(function() {
                 // find selected answer
                 const answerContainer = answerContainers[questionNumber];
                 const selector = 'input[name=question' + questionNumber + ']:checked';
-                const userAnswer = ($(answerContainer).find(selector) || {}).val();
+                const selectedQuestion = $(answerContainer).find(selector);
+                const userAnswer = selectedQuestion.val();
 
                 // if answer is correct
                 if (userAnswer === currentQuestion.correctAnswer) {
@@ -120,24 +120,25 @@ $(document).ready(function() {
                     numCorrect++;
 
                     // color the answers green
-                    $(answerContainers[questionNumber]).css("color", "lightgreen");
+                    $(answerContainer).find("p label").addClass("green-text text-darken-4");
                 }
                 // if answer is wrong or blank
                 else {
                     // color the answers red
-                    $(answerContainers[questionNumber]).css("color", "red");
+                    $(answerContainer).find("p label").addClass("red-text text-darken-4");
                 }
             });
 
             // show number of correct answers out of total
-            resultsContainer.html(numCorrect + ' out of ' + myQuestions.length);
+            resultsContainer.html("<p>You got: " + numCorrect + " out of " + myQuestions.length + " correct</p>");
+            $('html').scrollTop(0);
         }
 
         // display quiz right away
         buildQuiz();
 
         // on submit, show result
-        // submitButton.click(showResults);
+        submitButton.click(showResults);
     })();
 
 });
