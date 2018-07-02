@@ -56,12 +56,12 @@
 				</div>
 
 				<?php
-					if (isset($_SESSION["usernamecheck"])){
+					//if (isset($_SESSION["usernamecheck"])){
 						$usernamecheck=$_SESSION["usernamecheck"];
 						if ($usernamecheck==false){
 							echo "<p style='color: red;'>Username does not exist or is wrong</p>";
 						}
-					}
+					//}
 				?>
 
 				<label for="pwd"><b>Password:</b></label><br>
@@ -72,12 +72,12 @@
 				</div>
 
 				<?php
-					if (isset($_SESSION["passwordcheck"])){
+					//if (isset($_SESSION["passwordcheck"])){
 						$passwordcheck=$_SESSION["passwordcheck"];
 						if ($passwordcheck==false){
 							echo "<p style='color: red;'>Your password is incorrect</p>";
 						}
-					}
+					//}
 				?>
 
 				<label>

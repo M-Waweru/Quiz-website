@@ -7,10 +7,10 @@
 	<body>
 		<h2>Create a quiz</h2>
 		<form name="quizform" method="post" action="php/postingquiz.php">
-			Enter the quiz name:
-			<input type="text" name="quizname"><br>
-			Choose the category of the quiz
-			<select name="quizcategory">
+			<label for="quizname">Enter the quiz name:</label>
+			<input type="text" name="quizname" required><br>
+			<label for="quizcategory">Choose the category of the quiz</label>
+			<select name="quizcategory" required>
 				<option value="General">General Knowledge</option>
 				<option value="Physics">Physics</option>
 				<option value="Maths">Mathematics</option>
@@ -18,8 +18,8 @@
 				<option value="Others">Others</option>
 				<option value="Random">Random</option>
 			</select><br>
-			What is the quiz about?
-			<input type="textarea" name="quizdesc"><br>
+			<label for="quizdesc">What is the quiz about?</label>
+			<input type="textarea" name="quizdesc" required><br>
 			<input type="submit" name="Create quiz">
 		</form>
 	</body>

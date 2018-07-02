@@ -1,7 +1,3 @@
-<!-- <?php
-echo $_GET['foo'];
-?>
--->
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,34 +25,45 @@ echo $_GET['foo'];
             </nav>
         </div>
         <div class="row">
-            <div class="col s3">
-                <div class="container">
-                    <h2>Physics</h2>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae inventore temporibus vel vero iure cupiditate ullam, commodi labore cumque, delectus porro fuga, at, dolores iusto sunt tempore magnam molestiae. Harum.
-                </div>
-            </div>
+            <?php  
+                require "php/connection.php";
+                $categoryname=$_GET["Category"];
+
+                $categoryqry="SELECT * FROM `category` WHERE `Category Name`='$categoryname';";
+
+                $result = $mysqli->query($categoryqry);
+
+                if ($result==false){
+                    echo $mysqli->error;
+                }
+
+                while ($row=$result->fetch_assoc()){
+                    $categoryno=$row["Category No"];
+                    $categorydesc=$row['Category Description'];
+
+                    echo "<div class='col s3'>";
+                    echo "<div class='container'>";
+                    echo "<h2>$categoryname</h2>";
+                    echo "<p>$categorydesc</p>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+
+                $quizqry="SELECT * FROM `quiz` WHERE `Category No`='$categoryno'";
+
+                $result = $mysqli->query($quizqry);
+
+                while ($row=$result->fetch_assoc()){
+
+                }
+            ?>
+
             <div class="col s9">
                 <div class="container">
                     <div class="section">
                         <div class="card-panel">
                             <span class="">
                                 <a href="displayquiz.php?quizno=1">Link 1</a>
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</p>
-                            </span>
-                        </div>
-
-                        <div class="card-panel">
-                            <span class="">
-                                <a href="#">Link 2</a>
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</p>
-                            </span>
-                        </div>
-
-                        <div class="card-panel">
-                            <span class="">
-                                <a href="#">Link 3</a>
                                 <p>I am a very simple card. I am good at containing small bits of information.
                                 I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</p>
                             </span>
