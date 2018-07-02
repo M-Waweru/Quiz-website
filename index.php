@@ -1,9 +1,7 @@
 <?php
-    session_start();
+session_start();
 
-    
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,40 +22,22 @@
                         <a href="index.php" id="logo-container" class="brand-logo">Quiz Up</a>
                         <ul class="right hide-on-med-and-down">
                             <li><a href="#categories">Categories</a></li>
-                            <?php 
-                                if (isset($_SESSION["username"])){
-                                    $username = $_SESSION["username"];
-                                    echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
-                                    echo "<li><a href='#about'>About</a></li>";
-                                    echo "<li><a href='#about'>$username</a></li>";
-                                    echo "<li><a href='php/logout.php'>Logout</a></li>";                                    
-                                } else {
-                                    echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
-                                    echo "<li><a href='#about'>About</a></li>";
-                                    echo "<li><a href='loginpage.php'>Log In</a></li>";
-                                    echo "<li><a href='signup.html'>Sign Up</a></li>";                                
-                                }
+                            <?php
+                            if (isset($_SESSION["username"])){
+                            $username = $_SESSION["username"];
+                            echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
+                            echo "<li><a href='#about'>About</a></li>";
+                            echo "<li><a href='#about'>$username</a></li>";
+                            echo "<li><a href='php/logout.php'>Logout</a></li>";
+                            } else {
+                            echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
+                            echo "<li><a href='#about'>About</a></li>";
+                            echo "<li><a href='loginpage.php'>Log In</a></li>";
+                            echo "<li><a href='signup.html'>Sign Up</a></li>";
+                            }
                             ?>
                             <!-- <li><a href="#about">echo getEmail()</a></li> -->
                         </ul>
-                        <ul id="nav-mobile" class="side-nav">
-                            <li><a href="#categories">Categories</a></li>
-                            <?php 
-                                if (isset($_SESSION["username"])){
-                                    $username = $_SESSION["username"];
-                                    echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
-                                    echo "<li><a href='#about'>About</a></li>";
-                                    echo "<li><a href='#about'>$username</a></li>"; 
-                                    echo "<li><a href='php/logout.php'>Logout</a></li>";                                    
-                                } else {
-                                    echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
-                                    echo "<li><a href='#about'>About</a></li>";
-                                    echo "<li><a href='loginpage.php'>Log In</a></li>";
-                                    echo "<li><a href='signup.html'>Sign Up</a></li>";                                
-                                }
-                            ?>                          
-                        </ul>
-                        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu material-icons">reorder</i></a>
                     </div>
                 </div>
             </nav>
