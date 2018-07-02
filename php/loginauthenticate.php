@@ -4,7 +4,6 @@ session_start();
 
 $username = $mysqli->real_escape_string($_REQUEST['username']);
 $pwd = $mysqli->real_escape_string($_REQUEST['pwd']);
-echo $pwd;
 
 $qry="SELECT * FROM `Users` WHERE username= '$username'";
 
@@ -12,10 +11,10 @@ $result = $mysqli->query($qry);
 
 if ($result===true || mysqli_num_rows($result) > 0){
 	while ($row=$result->fetch_assoc()){
-		//$hashed=password_hash($pwd, PASSWORD_DEFAULT);
-		//$hash=;
-		//echo $row["Password"]."<br>";
-		//echo $hashed;
+		$hashed=password_hash($pwd, PASSWORD_DEFAULT);
+
+		echo $row["Password"]."<br>";
+		echo $hashed;
 		if (password_verify($pwd, $row["Password"])){
 			$_SESSION["passwordcheck"]=true;
 			$_SESSION["username"]=$username;
@@ -25,7 +24,7 @@ if ($result===true || mysqli_num_rows($result) > 0){
 			header('Location: ../index.php');
 		} else {
 			$_SESSION["passwordcheck"]=false;
-			echo "Wrong password";
+			echo "<br>Wrong password";
 			//header('Location: ../loginpage.php');
 		}
 	}

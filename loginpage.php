@@ -9,7 +9,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="css/form-styles.css">
-	<script src="js/jquery.js"></script>
 	<script type="text/javascript">
 		function validatelogin(){
 			var user = document.loginform.username.value;
@@ -99,5 +98,6 @@
 	<footer>
 		<p>Quiz site @2018</p>
 	</footer>
+	<script src="js/jquery.js"></script>
 </body>
 </html>

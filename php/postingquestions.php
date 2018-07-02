@@ -1,5 +1,5 @@
 <?php
-	//session_start();
+	session_start();
 	require 'connection.php';
 
 	$questiondata = $mysqli->real_escape_string($_REQUEST['questiondata']);
@@ -31,8 +31,8 @@
 	//Passing the sql stmt to the db
 	if ($mysqli->query($questionqry)==true){
 		echo "Record inserted";
+		header('Location: ../createquiz.html');
 	} else {
 		echo "Error".$mysqli->error;
 	}
-	//header('Location: ../createquiz.html');
 ?>

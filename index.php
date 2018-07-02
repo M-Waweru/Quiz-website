@@ -33,7 +33,7 @@
                                     echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
                                     echo "<li><a href='#about'>About</a></li>";
                                     echo "<li><a href='loginpage.php'>Log In</a></li>";
-                                    echo "<li><a href='signup.html'>Sign Up</a></li>";                                
+                                    echo "<li><a href='signup.php'>Sign Up</a></li>";                                
                                 }
                             ?>
                             <!-- <li><a href="#about">echo getEmail()</a></li> -->
@@ -51,7 +51,7 @@
                                     echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
                                     echo "<li><a href='#about'>About</a></li>";
                                     echo "<li><a href='loginpage.php'>Log In</a></li>";
-                                    echo "<li><a href='signup.html'>Sign Up</a></li>";                                
+                                    echo "<li><a href='signup.php'>Sign Up</a></li>";                                
                                 }
                             ?>                          
                         </ul>
