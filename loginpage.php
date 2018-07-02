@@ -1,3 +1,7 @@
+<?php  
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +43,7 @@
 		<h1>Quiz Up</h1>
 	</div>
 	<form name="loginform" method="post" onsubmit="return validatelogin()" action="php/loginauthenticate.php">
-		<div class="container">
+		<div class="formcontainer">
 			<div class="title">
 				<h1>Log In</h1>
 				<p>Please fill in this form to log in to your account.</p>
@@ -52,12 +56,30 @@
 					<p>Username cannot be blank</p>
 				</div>
 
-				<label for="password"><b>Password:</b></label><br>
+				<?php
+					if (isset($_SESSION["usernamecheck"])){
+						$usernamecheck=$_SESSION["usernamecheck"];
+						if ($usernamecheck==false){
+							echo "<p style='color: red;'>Username does not exist or is wrong</p>";
+						}
+					}
+				?>
+
+				<label for="pwd"><b>Password:</b></label><br>
 				<input type="password" name="pwd" placeholder="Enter Password">
 				<br>
 				<div class="alert" id=pwdalert>
 					<p>Password cannot be blank</p>
 				</div>
+
+				<?php
+					if (isset($_SESSION["passwordcheck"])){
+						$passwordcheck=$_SESSION["passwordcheck"];
+						if ($passwordcheck==false){
+							echo "<p style='color: red;'>Your password is incorrect</p>";
+						}
+					}
+				?>
 
 				<label>
 					<input type="checkbox" name="remember">Remember me

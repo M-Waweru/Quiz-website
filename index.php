@@ -21,21 +21,41 @@
             <nav id="navigation" class="default_color z-depth-0" role="navigation">
                 <div class="container">
                     <div class="nav-wrapper">
-                        <a href="index.html" id="logo-container" class="brand-logo">Quiz Up</a>
+                        <a href="index.php" id="logo-container" class="brand-logo">Quiz Up</a>
                         <ul class="right hide-on-med-and-down">
                             <li><a href="#categories">Categories</a></li>
-                            <li><a href="postingquiz.html">Create a quiz</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="loginpage.html">Log In</a></li>
-                            <li><a href="signup.html">Sign Up</a></li>
+                            <?php 
+                                if (isset($_SESSION["username"])){
+                                    $username = $_SESSION["username"];
+                                    echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
+                                    echo "<li><a href='#about'>About</a></li>";
+                                    echo "<li><a href='#about'>$username</a></li>";
+                                    echo "<li><a href='php/logout.php'>Logout</a></li>";                                    
+                                } else {
+                                    echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
+                                    echo "<li><a href='#about'>About</a></li>";
+                                    echo "<li><a href='loginpage.php'>Log In</a></li>";
+                                    echo "<li><a href='signup.html'>Sign Up</a></li>";                                
+                                }
+                            ?>
                             <!-- <li><a href="#about">echo getEmail()</a></li> -->
                         </ul>
                         <ul id="nav-mobile" class="side-nav">
                             <li><a href="#categories">Categories</a></li>
-                            <li><a href="#about">Create a quiz</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#about">Log In</a></li>
-                            <li><a href="#about">Sign Up</a></li>
+                            <?php 
+                                if (isset($_SESSION["username"])){
+                                    $username = $_SESSION["username"];
+                                    echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
+                                    echo "<li><a href='#about'>About</a></li>";
+                                    echo "<li><a href='#about'>$username</a></li>"; 
+                                    echo "<li><a href='php/logout.php'>Logout</a></li>";                                    
+                                } else {
+                                    echo "<li><a href='postingquiz.html'>Create a quiz</a></li>";
+                                    echo "<li><a href='#about'>About</a></li>";
+                                    echo "<li><a href='loginpage.php'>Log In</a></li>";
+                                    echo "<li><a href='signup.html'>Sign Up</a></li>";                                
+                                }
+                            ?>                          
                         </ul>
                         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu material-icons">reorder</i></a>
                     </div>
@@ -64,7 +84,7 @@
                         <div class="col s12 m4 l4">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" height="250px" width="500px" src="images/astronomy.jpg">
+                                    <img class="activator" height="220px" width="500px" src="images/astronomy.jpg">
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Physics<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
@@ -79,7 +99,7 @@
                         <div class="col s12 m4 l4">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" height="250px" width="500px" src="images/chemistry.jpg">
+                                    <img class="activator" height="220px" width="500px" src="images/chemistry.jpg">
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Chemistry<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
@@ -94,7 +114,7 @@
                         <div class="col s12 m4 l4">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" height="250px" width="500px" src="images/cities.jpg">
+                                    <img class="activator" height="220px" width="500px" src="images/cities.jpg">
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Cities<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
@@ -109,7 +129,7 @@
                         <div class="col s12 m4 l4">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" height="250px" width="500px" src="images/gaming.jpg">
+                                    <img class="activator" height="220px" width="500px" src="images/gaming.jpg">
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Gaming<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
@@ -124,7 +144,7 @@
                         <div class="col s12 m4 l4">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
-                                   <img class="activator" height="250px" width="500px" src="images/geography.jpg">
+                                   <img class="activator" height="220px" width="500px" src="images/geography.jpg">
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Geography<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
@@ -139,7 +159,7 @@
                         <div class="col s12 m4 l4">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" height="250px" width="500px" src="images/maths.jpg">
+                                    <img class="activator" height="220px" width="500px" src="images/maths.jpg">
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Mathematics<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
