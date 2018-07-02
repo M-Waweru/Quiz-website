@@ -11,7 +11,7 @@ $(document).ready(function() {
             let myQuestions = [];
 
             $.ajax({
-                url: "http://localhost/Quiz-website/php/testQuestions.php",
+                url: "http://localhost/Quiz-website/php/fetchQuestions.php",
                 type: 'GET',
                 dataType: "json",
                 async: false, // todo find way to do the request asynchronously
