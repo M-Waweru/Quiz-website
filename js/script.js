@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
     (function() {
         const quizContainer = $('#quizSection');
         const resultsContainer = $('#results');
@@ -9,9 +19,11 @@ $(document).ready(function() {
 
         function getQuestions() {
             let myQuestions = [];
+            let quizno = getParameterByName('quizno');
+            let url = "http://localhost/Quiz-website/php/fetchQuestions.php?quizno=" + quizno;
 
             $.ajax({
-                url: "http://localhost/Quiz-website/php/fetchQuestions.php",
+                url: url,
                 type: 'GET',
                 dataType: "json",
                 async: false, // todo find way to do the request asynchronously

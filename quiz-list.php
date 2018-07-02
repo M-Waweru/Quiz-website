@@ -40,7 +40,7 @@ echo $_GET['foo'];
                     <div class="section">
                         <div class="card-panel">
                             <span class="">
-                                <a href="#">Link 1</a>
+                                <a href="displayquiz.php?quizno=1">Link 1</a>
                                 <p>I am a very simple card. I am good at containing small bits of information.
                                 I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</p>
                             </span>

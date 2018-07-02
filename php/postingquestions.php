@@ -8,7 +8,7 @@
 	$choice3 = $mysqli->real_escape_string($_REQUEST['choice3']);
 	$answer = $mysqli->real_escape_string($_REQUEST['answer']);
 	//$quizno = $_SESSION["quizno"];
-	$quizno="1";
+	$quizno=$_SESSION["quizno"];
 
 	do {
 		//Random generation of the quiz number

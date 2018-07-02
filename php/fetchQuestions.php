@@ -1,6 +1,6 @@
 <?php
     require 'connection.php';
-    $quizno = 1;
+    $quizno = $_GET['quizno'];
     $qry="SELECT * FROM `question` WHERE `Quiz No`= '".$quizno."';";
     $myQuestions = array();
 
