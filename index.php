@@ -86,7 +86,7 @@
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Physics<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
-                                    <p><a href="quiz-list.php?Category=Physics">Try it</a></p>
+                                    <p><a href="quiz-list.php?Category=General">Try it</a></p>
                                 </div>
                                 <div class="card-reveal">
                                     <span class="card-title grey-text text-darken-4">Physics<i class="mdi-navigation-close right material-icons">close</i></span>

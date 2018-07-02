@@ -53,23 +53,27 @@
 
                 $result = $mysqli->query($quizqry);
 
+                echo "<div class='col s9'>";
+                echo "<div class='container'>";
+                echo "<div class='section'>";
+
                 while ($row=$result->fetch_assoc()){
+                    $quizno=$row["Quiz No"];
+                    $quizname=$row["Quiz Name"];
+                    $quizdec=$row["Quiz Description"];
+                    $publisher=$row["Publisher"];
 
+                    echo "<div class='card-panel'>";
+                    echo "<span class=''>";
+                    echo "<a href='displayquiz.php?quizno=$quizno'>$quizname</a>";
+                    echo "<p>$quizdec</p>";
+                    echo "</span>";
+                    echo "</div>";
                 }
-            ?>
 
-            <div class="col s9">
-                <div class="container">
-                    <div class="section">
-                        <div class="card-panel">
-                            <span class="">
-                                <a href="displayquiz.php?quizno=1">Link 1</a>
-                                <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</p>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+            ?>
         </body>
     </html>
