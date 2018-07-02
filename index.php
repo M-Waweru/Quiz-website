@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Physics<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
-                                    <p><a href="physics-categories.html">Try it</a></p>
+                                    <p><a href="quiz-list.php?Category=Physics">Try it</a></p>
                                 </div>
                                 <div class="card-reveal">
                                     <span class="card-title grey-text text-darken-4">Physics<i class="mdi-navigation-close right material-icons">close</i></span>
@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Chemistry<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
-                                    <p><a href="">Try it</a></p>
+                                    <p><a href="quiz-list.php?Category=Chemistry">Try it</a></p>
                                 </div>
                                 <div class="card-reveal">
                                     <span class="card-title grey-text text-darken-4">Chemistry<i class="mdi-navigation-close right material-icons">close</i></span>
@@ -118,7 +118,7 @@
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Cities<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
-                                    <p><a href="">Website Link</a></p>
+                                    <p><a href="quiz-list.php?Category=Cities">Website Link</a></p>
                                 </div>
                                 <div class="card-reveal">
                                     <span class="card-title grey-text text-darken-4">Cities<i class="mdi-navigation-close right material-icons">close</i></span>
@@ -133,7 +133,7 @@
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Gaming<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
-                                    <p><a href="#">Website Link</a></p>
+                                    <p><a href="quiz-list.php?Category=Gaming">Website Link</a></p>
                                 </div>
                                 <div class="card-reveal">
                                     <span class="card-title grey-text text-darken-4">Gaming<i class="mdi-navigation-close right material-icons">close</i></span>
@@ -144,15 +144,15 @@
                         <div class="col s12 m4 l4">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
-                                   <img class="activator" height="220px" width="500px" src="images/geography.jpg">
+                                    <img class="activator" height="250px" width="500px" src="images/geography.jpg">
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Geography<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
-                                    <p><a href="">Website Link</a></p>
+                                    <p><a href="quiz-list.php?Category=Geography">Website Link</a></p>
                                 </div>
                                 <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Microblog<i class="mdi-navigation-close right material-icons">close</i></span>
-                                    <p>Gaming</p>
+                                    <span class="card-title grey-text text-darken-4">Geography<i class="mdi-navigation-close right material-icons">close</i></span>
+                                    <p>Geography</p>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">Mathematics<i class="mdi-navigation-more-vert right material-icons">more_vert</i></span>
-                                    <p><a href="#">Website Link</a></p>
+                                    <p><a href="quiz-list.php?Category=Mathematics">Website Link</a></p>
                                 </div>
                                 <div class="card-reveal">
                                     <span class="card-title grey-text text-darken-4">Mathematics<i class="mdi-navigation-close right material-icons">close</i></span>
@@ -177,6 +177,5 @@
         </div>
         <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>

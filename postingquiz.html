@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Create a quiz</title>
-</head>
-<body>
-	<h2>Create a quiz</h2>
-	<form name="quizform" method="post" action="php/postingquiz.php">
-		Enter the quiz name:
-		<input type="text" name="quizname"><br>
-		Choose the category of the quiz
-		<select name="quizcategory">
-			<option value="General">General Knowledge</option>
-			<option value="Physics">Physics</option>
-			<option value="Maths">Mathematics</option>
-			<option value="Movies">Movies</option>
-			<option value="Others">Others</option>
-			<option value="Random">Random</option>
-		</select><br>
-		What is the quiz about?
-		<input type="textarea" name="quizdesc"><br>
-		<input type="submit" name="Create quiz">
-	</form>
-</body>
+	<head>
+		<title>Create a quiz</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h2>Create a quiz</h2>
+		<form name="quizform" method="post" action="php/postingquiz.php">
+			Enter the quiz name:
+			<input type="text" name="quizname"><br>
+			Choose the category of the quiz
+			<select name="quizcategory">
+				<option value="General">General Knowledge</option>
+				<option value="Physics">Physics</option>
+				<option value="Maths">Mathematics</option>
+				<option value="Movies">Movies</option>
+				<option value="Others">Others</option>
+				<option value="Random">Random</option>
+			</select><br>
+			What is the quiz about?
+			<input type="textarea" name="quizdesc"><br>
+			<input type="submit" name="Create quiz">
+		</form>
+	</body>
 </html>
