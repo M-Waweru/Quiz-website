@@ -83,8 +83,10 @@ $(document).ready(function() {
                         // push radio buttons and labels to array
                         answers.push(
                             `<p>
-                                <input id="question${currentQuestion.answers[letter]}" class="with-gap" name="question${questionNumber}" type="radio" value="${letter}" />
-                                <label for="question${currentQuestion.answers[letter]}">${currentQuestion.answers[letter]}</label>
+                                <label>
+                                    <input id="question${currentQuestion.answers[letter]}" class="with-gap" name="question${questionNumber}" type="radio" value="${letter}" />
+                                    <span>${currentQuestion.answers[letter]}</span>
+                                </label>
                             </p>`
                         );
                     }
